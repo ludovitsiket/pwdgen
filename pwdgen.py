@@ -51,8 +51,8 @@ def make_pwd(l1, l2, l3, l4, some_list):
 
 def pwdgen_help():
     parser = argparse.ArgumentParser(add_help=True)
-    parser.add_argument('-l', '--length', action="store", dest="l", type=int, help="number of password length")
-    parser.print_usage()
+    parser.add_argument('-l', '--length', action="store", dest="l", type=int, help="number of password length, max 79")
+    parser.print_help()
 
 
 if __name__ == '__main__':

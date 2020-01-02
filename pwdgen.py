@@ -40,12 +40,6 @@ def pwdgen_help():
     parser.print_help()
 
 
-def collect_values():
-    full_dict = result_dict
-    whole_length = len(full_dict)
-    return full_dict, whole_length
-
-
 def make_password(value_length, values, length):
     iterator = 0
     password = []
@@ -62,9 +56,8 @@ if __name__ == '__main__':
         val = dict_values()
         keys = dict_keys(dict_values())
         result_dict = make_dict(keys, val)
-        dictionary, dictionary_length = collect_values()
-        pwd = make_password(password_length, dictionary, dictionary_length)
-        nice_pwd = multi_replace(pwd, '[,],' ',' "'", '')
+        pwd = make_password(password_length, result_dict, len(result_dict))
+        nice_pwd = multi_replace(pwd, '[,],' ',' "'" ' ', '')
         print(nice_pwd)
     except (IndexError, ValueError):
         pwdgen_help()
